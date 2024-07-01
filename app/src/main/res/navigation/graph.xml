@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/fragement1">
+
+    <fragment
+        android:id="@+id/fragement1"
+        android:name="com.karan.bottom_navigation.fragement1"
+        android:label="fragment_fragement1"
+        tools:layout="@layout/fragment_fragement1" >
+        <action
+            android:id="@+id/action_fragement1_to_fragment2"
+            app:destination="@id/fragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.karan.bottom_navigation.fragment2"
+        android:label="fragment_fragment2"
+        tools:layout="@layout/fragment_fragment2" >
+        <action
+            android:id="@+id/action_fragment2_to_fragment3"
+            app:destination="@id/fragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="com.karan.bottom_navigation.fragment3"
+        android:label="fragment_fragment3"
+        tools:layout="@layout/fragment_fragment3" >
+        <action />
+    </fragment>
+</navigation>
