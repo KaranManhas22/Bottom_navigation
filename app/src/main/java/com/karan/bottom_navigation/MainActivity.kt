@@ -28,9 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
         navController = findNavController(R.id.navController)
 
-        navController.addOnDestinationChangedListener { navController, destination, argument ->
-
-        }
+        navController.addOnDestinationChangedListener { navController, destination, argument -> }
         binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.first -> navController.navigate(R.id.fragement1)
