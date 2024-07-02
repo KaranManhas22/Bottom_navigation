@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
+import com.karan.bottom_navigation.databinding.FragmentFragment3Binding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,9 +24,13 @@ class fragment3 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var binding: FragmentFragment3Binding
+    lateinit var mainActivity: MainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        mainActivity=activity as MainActivity
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -33,8 +41,15 @@ class fragment3 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding=FragmentFragment3Binding.inflate(layoutInflater)
+        val callback=object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                findNavController().navigate(R.id.action_fragment3_to_fragment2)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(callback)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment3, container, false)
+        return binding.root
     }
 
     companion object {

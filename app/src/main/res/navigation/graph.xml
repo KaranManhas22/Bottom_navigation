@@ -22,11 +22,17 @@
         <action
             android:id="@+id/action_fragment2_to_fragment3"
             app:destination="@id/fragment3" />
+        <action
+            android:id="@+id/action_fragment2_to_fragement1"
+            app:destination="@id/fragement1" />
     </fragment>
     <fragment
         android:id="@+id/fragment3"
         android:name="com.karan.bottom_navigation.fragment3"
         android:label="fragment_fragment3"
         tools:layout="@layout/fragment_fragment3" >
+        <action
+            android:id="@+id/action_fragment3_to_fragment2"
+            app:destination="@id/fragment2" />
     </fragment>
 </navigation>
